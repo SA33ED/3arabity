@@ -1,0 +1,247 @@
+body {
+    background-color: #023632;
+    font-family: sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #023632
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #009879;
+}
+
+.navbar {
+    width: 100%;
+    color: white;
+    font-size: 40px;
+    background-color: #023632;
+    margin: -10px;
+    padding: 20px;
+    border-bottom: 5px solid white;
+    position: fixed;
+    top: 0;
+}
+
+.navbar span {
+    margin-right: 1300px;
+    font-weight: bold;
+}
+
+.navbar button {
+    margin-left: 10px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #009879;
+    color: white;
+    border: 2px solid #009879;
+    font-weight: bold;
+}
+
+.navbar button:hover {
+    background-color: white;
+    color: #009879;
+}
+
+/* HOME-PADE FORMAT------------------------------------------------------------------------ */
+.homepage button {
+    width: 340px;
+    height: 300px;
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-right: 10px;
+    margin-bottom: 40px;
+    border: 5px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 0;
+    outline: none;
+    color: white;
+    background-color: #009879;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 40px;
+}
+
+
+.homepage button:hover {
+    width: 290px;
+    height: 250px;
+    font-size: 35px;
+}
+
+/* NEW AND EDIT FORMS FORMAT ------------------------------------------------------------- */
+.form-contaner {
+    margin: 10% auto;
+    width: 580px;
+    border-radius: 25px;
+    background-color: #f3f3f3;
+    border: 5px solid #009879;
+    box-shadow: 0, 0, 2000px black;
+}
+
+.form-header {
+    text-align: center;
+    padding-top: 60px;
+
+}
+
+.form-header h1 {
+    color: #009879;
+    font-size: 55px;
+    margin-bottom: 1.9em;
+}
+
+.form-header h2 {
+    color: #009879;
+    font-size: 55px;
+}
+
+.form-main {
+    text-align: center;
+}
+
+.form-main input {
+    margin-bottom: 50px;
+    width: 500px;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+.form-main button {
+    width: 500px;
+    height: 40px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid black;
+    padding-left: 0;
+    background-color: #009879;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.form-main button:hover {
+    box-shadow: 2px 2px 5px #555;
+    background-color: #7799d4;
+}
+
+.form-main input:hover {
+    box-shadow: 2px 2px 5px #555;
+    background-color: #ddd;
+}
+.select1 {
+    margin-bottom: 50px;
+    width: 500px;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+
+/* ------------------------------------------------------------------------------- */
+/* LISTS FORMAT------------------------------------------------------------------- */
+h1 {
+
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 100px;
+
+}
+
+.table {
+    border-collapse: collapse;
+    font-size: 1.2em;
+    min-width: 1890px;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 10px;
+}
+
+.table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.table th,
+td {
+    padding: 10px 15px;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+    background-color: White;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+#edit {
+    padding-bottom: 5px;
+    width: 130px;
+    height: 50px;
+    color: white;
+    font-size: 25px;
+    margin-right: 5px;
+    margin-bottom: 1px;
+    border-color: #009879;
+    border-radius: 10px;
+    background-color: #009879;
+}
+
+#edit:hover {
+    background-color: white;
+    color: #009879;
+    border-color: #009879;
+}
+
+#del {
+    padding-bottom: 5px;
+    width: 130px;
+    height: 50px;
+    color: white;
+    font-size: 25px;
+    text-align: center;
+    margin-right: 10px;
+    border-color: #009879;
+    border-radius: 10px;
+    background-color: #009879;
+}
+
+#del:hover {
+    background-color: white;
+    color: #009879;
+    border-color: #009879;
+}
