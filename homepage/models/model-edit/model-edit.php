@@ -1,4 +1,13 @@
 <?php
+if (isset($_POST["modelID"])) {
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $id = $_POST['modelID'];
+    $name = $_POST['modelName'];
+    $bid = $_POST['brandID'];
+    $sql = "UPDATE models SET name='$name' , brand_id='$bid' WHERE id='$id'";
+    mysqli_query($conn, $sql);
+    header('Location:../model-list/model-list.php');
+}
 $id = $_GET["id"];
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM models WHERE id='$id'";
@@ -23,7 +32,7 @@ $model = mysqli_fetch_assoc($data);
             <h1>Edit Model</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="model-update.php">
+            <form method="post" action="model-edit.php">
                 <input type="text" placeholder="ID" name="modelID" value="<?php echo $model['id']; ?>" required>
                 <input type="text" placeholder="Enter Model" name="modelName" value="<?php echo $model['name']; ?>" required>
                 <input type="text" placeholder="Enter Brand ID" name="brandID" value="<?php echo $model['brand_id']; ?>" required>

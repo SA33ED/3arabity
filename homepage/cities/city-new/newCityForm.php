@@ -1,3 +1,12 @@
+<?php
+if (isset($_POST["cityName"])) {
+  $city = $_POST["cityName"];
+  $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+  $sql = "INSERT INTO cities (name) VALUES ('$city')";
+  mysqli_query($conn, $sql);
+  header("Location:../cities-list/citiesList.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -17,7 +26,7 @@
       <h1>New City</h1>
     </div>
     <div class="form-main">
-      <form method="post" action="cities-save.php">
+      <form method="post" action="newCityForm.php">
         <input type="text" placeholder="Enter City Name" name="cityName" required>
         <button type="submit" name="save_bt">save</button>
         <button><a herf="#">back</a></button>

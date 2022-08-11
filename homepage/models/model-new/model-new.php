@@ -1,4 +1,12 @@
 <?php
+if (isset($_POST["modelName"])) {
+    $name = $_POST['modelName'];
+    $bid = $_POST['brandID'];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "INSERT INTO models (name , brand_id) VALUES ('$name','$bid')";
+    mysqli_query($conn, $sql);
+    header("Location:../model-list/model-list.php");
+}
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM brands";
 $data1 = mysqli_query($conn, $sql);
@@ -21,7 +29,7 @@ $data1 = mysqli_query($conn, $sql);
             <h1>New Model</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="model-save.php">
+            <form method="post" action="model-new.php">
                 <input type="text" placeholder="Enter Model" name="modelName" required>
                 <select class="select1" name="brandID">
                     <?php while ($row = mysqli_fetch_assoc($data1)) { ?>

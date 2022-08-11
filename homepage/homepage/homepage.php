@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../../css/design.css">
 </head>
 
+
 <body>
     <nav class="navbar"><span>3arabity.com</span></nav>
     <!-------------------------------Customers------------------------------------------>

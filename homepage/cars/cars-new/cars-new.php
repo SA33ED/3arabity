@@ -1,4 +1,15 @@
 <?php
+if (isset($_POST["model_id"])) {
+    $model_id = $_POST['model_id'];
+    $color_id = $_POST['color_id'];
+    $plate_number = $_POST['plate_number'];
+    $year_id = $_POST['year_id'];
+    $price_per_hour = $_POST['p_p_h'];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "INSERT INTO cars (model_id , color_id , plate_number , year_id , price_per_hour) VALUES ('$model_id', '$color_id', '$plate_number' , '$year_id' , '$price_per_hour')";
+    mysqli_query($conn, $sql);
+    header("Location:../cars-list/car-list.php");
+}
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM models";
 $sql1 = "SELECT * FROM colors";
@@ -25,7 +36,7 @@ $data3 = mysqli_query($conn, $sql2);
             <h1>New Car</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="cars-save.php">
+            <form method="post" action="cars-new.php">
                 <select class="select1" name="model_id">
                     <?php while ($row = mysqli_fetch_assoc($data1)) { ?>
                         <option value="<?php echo $row['id']; ?>"><?php echo $row['name']; ?>

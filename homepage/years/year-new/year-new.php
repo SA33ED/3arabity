@@ -1,3 +1,12 @@
+<?php
+if (isset($_POST["yearName"])) {
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $name = $_POST['yearName'];
+    $sql = "INSERT INTO years (name) VALUES ('$name')";
+    mysqli_query($conn, $sql);
+    header("Location:../years-list/year-list.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -16,7 +25,7 @@
             <h1>New Year</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="year-save.php">
+            <form method="post" action="year-new.php">
                 <input type="text" placeholder="Enter Year" name="yearName" required>
                 <button type="submit" name="save_bt">save</button>
                 <button><a herf="#">back</a></button>

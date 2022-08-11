@@ -1,4 +1,12 @@
 <?php
+if (isset($_POST["colorID"])) {
+    $id = $_POST["colorID"];
+    $name = $_POST["colorName"];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "UPDATE colors SET name='$name' WHERE id='$id'";
+    mysqli_query($conn, $sql);
+    header("Location:../color-list/color-list.php");
+}
 
 $id = $_GET["id"];
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
@@ -25,7 +33,7 @@ $color = mysqli_fetch_assoc($data);
             <h1>Edit Color</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="color-update.php" ;>
+            <form method="post" action="color-edit.php" ;>
                 <input type="text" placeholder="ID" name="colorID" value="<?php echo $color['id']; ?>" required>
                 <input type="text" placeholder="Enter Color" name="colorName" value="<?php echo $color['name']; ?>" required>
                 <button type="submit" name="save_bt">save</button>

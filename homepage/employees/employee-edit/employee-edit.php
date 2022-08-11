@@ -1,4 +1,19 @@
 <?php
+if (isset($_POST["eID"])) {
+    $id = $_POST["eID"];
+    $name = $_POST["eName"];
+    $phone = $_POST["ePhone"];
+    $address = $_POST["eAddress"];
+    $email = $_POST["eEmail"];
+    $dID = $_POST["dID"];
+    $bsalary = $_POST["bsalary"];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "UPDATE employees
+    SET name = '$name' , phone = '$phone' , address = '$address' , email ='$email' , department_id='$dID' , basic_salary='$bsalary'
+    WHERE id ='$id';";
+    mysqli_query($conn, $sql);
+    header("Location:../employee-list/employee-list.php");
+}
 $id = $_GET["id"];
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM employees WHERE id='$id'";
@@ -23,7 +38,7 @@ $employee = mysqli_fetch_assoc($data);
             <h1>Edit Employee</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="employee-update.php">
+            <form method="post" action="employee-edit.php">
                 <input type="text" placeholder="Employee ID" name="eID" value="<?php echo $employee['id']; ?>" required>
                 <input type="text" placeholder="New Name" name="eName" value="<?php echo $employee['name']; ?>" required>
                 <input type="text" placeholder="New Phone" name="ePhone" value="<?php echo $employee['phone']; ?>" required>

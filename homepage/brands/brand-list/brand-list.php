@@ -1,4 +1,12 @@
 <?php
+if (isset($_GET["id"])) {
+    $id = $_GET["id"];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "DELETE FROM brands WHERE id='$id'";
+
+    mysqli_query($conn, $sql);
+    header("Location:brand-list.php");
+}
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM brands";
 $data = mysqli_query($conn, $sql);
@@ -41,7 +49,7 @@ $data = mysqli_query($conn, $sql);
                             <a href="../brand-edit/brand-edit.php?id=<?php echo $brands["id"]; ?>">
                                 <button id="edit">Edit</button>
                             </a>
-                            <a href="brand-delete.php?id=<?php echo $brands["id"]; ?>">
+                            <a href="brand-list.php?id=<?php echo $brands["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
 

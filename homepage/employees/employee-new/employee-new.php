@@ -1,4 +1,16 @@
 <?php
+if (isset($_POST["eName"])) {
+    $name = $_POST["eName"];
+    $phone = $_POST["ePhone"];
+    $address = $_POST["eAddress"];
+    $email = $_POST["eEmail"];
+    $dID = $_POST["dID"];
+    $bsalary = $_POST["bsalary"];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "INSERT INTO employees (name ,phone ,address ,email ,department_id ,basic_salary) VALUES ('$name', '$phone', '$address', '$email','$dID','$bsalary')";
+    mysqli_query($conn, $sql);
+    header("Location:../employee-list/employee-list.php");
+}
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM departments";
 $data1 = mysqli_query($conn, $sql);
@@ -22,7 +34,7 @@ $data1 = mysqli_query($conn, $sql);
             <h1>New Employee</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="employee-save.php">
+            <form method="post" action="employee-new.php">
                 <input type="text" placeholder="New Name" name="eName" required>
                 <input type="text" placeholder="New Phone" name="ePhone" required>
                 <input type="text" placeholder="New Address" name="eAddress" required>

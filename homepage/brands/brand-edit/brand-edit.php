@@ -1,4 +1,12 @@
 <?php
+if (isset($_POST["brandID"])) {
+    $brandID = $_POST["brandID"];
+    $newBrand = $_POST["nbrandName"];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "UPDATE brands SET name='$newBrand' WHERE id='$brandID'";
+    mysqli_query($conn, $sql);
+    header("Location:../brand-list/brand-list.php");
+}
 $id = $_GET["id"];
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM brands WHERE id='$id'";
@@ -25,7 +33,7 @@ $brand = mysqli_fetch_assoc($data);
             <h1>Edit Brand</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="brand-update.php">
+            <form method="post" action="brand-edit.php">
                 <input type="text" placeholder="ID" name="brandID" value="<?php echo $brand['id']; ?>" required>
                 <input type="text" placeholder="Enter Brand" name="nbrandName" value="<?php echo $brand['name']; ?>" required>
                 <button type="submit" name="save_bt">save</button>

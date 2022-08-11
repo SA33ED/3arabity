@@ -1,3 +1,12 @@
+<?php
+if (isset($_POST["pmName"])) {
+    $pay = $_POST['pmName'];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "INSERT INTO payment_methods (name) VALUES ('$pay')";
+    mysqli_query($conn, $sql);
+    header("Location:../payment-list/payment-list.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -16,7 +25,7 @@
             <h1>New Payment Method</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="pay-save.php">
+            <form method="post" action="payment-new.php">
                 <input type="text" placeholder="Enter Payment Method" name="pmName" required>
                 <button type="submit" name="save_bt">save</button>
                 <button><a herf="#">back</a></button>

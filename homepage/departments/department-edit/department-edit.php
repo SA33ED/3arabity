@@ -1,4 +1,12 @@
 <?php
+if (isset($_POST["dID"])) {
+    $id = $_POST['dID'];
+    $name = $_POST['dName'];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "UPDATE departments SET name='$name' WHERE id='$id'";
+    mysqli_query($conn, $sql);
+    header("Location:../departments-list/departments-list.php");
+}
 $id = $_GET['id'];
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM departments WHERE id='$id'";
@@ -25,7 +33,7 @@ $department = mysqli_fetch_assoc($data);
             <h1>Edit Department</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="department-update.php">
+            <form method="post" action="department-edit.php">
                 <input type="text" placeholder="ID" name="dID" value="<?php echo $department['id']; ?>" required> <!-- dID=>Department ID -->
                 <input type="text" placeholder="Enter Department Name" name="dName" value="<?php echo $department['name']; ?>" required>
                 <button type="submit" name="save_bt">save</button>

@@ -1,4 +1,11 @@
 <?php
+if (isset($_GET['id'])) {
+  $id = $_GET["id"];
+  $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+  $sql = "DELETE FROM customers WHERE id='$id'";
+  $data = mysqli_query($conn, $sql);
+  header("Location:customersList.php");
+}
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM customers";
 $data = mysqli_query($conn, $sql);
@@ -48,7 +55,7 @@ $data = mysqli_query($conn, $sql);
               <a href="../customer-edit/editCustomerForm.php?id=<?php echo $customer["id"]; ?>">
                 <button id="edit">Edit</button>
               </a>
-              <a href="customer-delete.php?id=<?php echo $customer["id"]; ?>">
+              <a href="customersList.php?id=<?php echo $customer["id"]; ?>">
                 <button id="del">Delete</button>
               </a>
 

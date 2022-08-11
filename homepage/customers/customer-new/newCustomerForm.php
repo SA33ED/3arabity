@@ -1,4 +1,17 @@
 <?php
+if (isset($_POST['cName'])) {
+  $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+  $name = $_POST["cName"];
+  $ni = $_POST["cNI"];
+  $phone = $_POST["cPhone"];
+  $address = $_POST["cAddress"];
+  $email = $_POST["cEmail"];
+  $bdate = $_POST["cBdate"];
+  $city = $_POST["city_id"];
+  $sql = "INSERT INTO customers (name , id_number , phone , address , email , bdate , city_id) VALUES ('$name' ,'$ni','$phone','$address','$email','$bdate','$city')";
+  mysqli_query($conn, $sql);
+  header("Location:../customers-list/customersList.php");
+}
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM cities";
 $data1 = mysqli_query($conn, $sql);
@@ -24,7 +37,7 @@ $data1 = mysqli_query($conn, $sql);
       <h2>--------------------</h2>
     </div>
     <div class="form-main">
-      <form method="post" action="customers-save.php">
+      <form method="post" action="newCustomerForm.php">
         <input type="text" placeholder="Name" name="cName" required>
         <input type="text" placeholder="Phone" name="cPhone" required>
         <input type="text" placeholder="Address" name="cAddress" required>

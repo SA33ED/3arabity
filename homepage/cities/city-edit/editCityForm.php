@@ -1,4 +1,14 @@
 <?php
+if (isset($_POST["ID"])) {
+  $id = $_POST["ID"];
+  $name = $_POST["cityName"];
+  $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+  $sql = "UPDATE cities SET name = '$name' WHERE id='$id'";
+  mysqli_query($conn, $sql);
+  header("Location:../cities-list/citiesList.php");
+}
+
+
 $id = $_GET["id"];
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM cities WHERE id='$id'";
@@ -23,7 +33,7 @@ $city = mysqli_fetch_assoc($data);
       <h1>Edit City</h1>
     </div>
     <div class="form-main">
-      <form method="post" action="city-save.php">
+      <form method="post" action="editCityForm.php">
         <input type="text" placeholder="ID" value="<?php echo $city["id"]; ?>" name="ID" required>
         <input type="text" placeholder="Enter New City Name" value="<?php echo $city["name"]; ?>" name="cityName" required>
         <button type="submit" name="save_bt">save</button>

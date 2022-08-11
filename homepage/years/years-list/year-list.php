@@ -1,4 +1,11 @@
 <?php
+if (isset($_GET['id'])) {
+    $id = $_GET["id"];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "DELETE FROM years WHERE id='$id'";
+    mysqli_query($conn, $sql);
+    header("Location:year-list.php");
+}
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM years";
 $data = mysqli_query($conn, $sql);
@@ -36,7 +43,7 @@ $data = mysqli_query($conn, $sql);
                             <a href="../year-edit/year-edit.php?id=<?php echo $row["id"]; ?>">
                                 <button id="edit">Edit</button>
                             </a>
-                            <a href="year-delete.php?id=<?php echo $row["id"]; ?>">
+                            <a href="year-list.php?id=<?php echo $row["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
                         </td>

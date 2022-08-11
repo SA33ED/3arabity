@@ -1,4 +1,11 @@
 <?php
+if (isset($_GET["id"])) {
+    $id = $_GET['id'];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "DELETE FROM cities WHERE id='$id'";
+    mysqli_query($conn, $sql);
+    header("Location:citiesList.php");
+}
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM cities";
 $data = mysqli_query($conn, $sql); //dataSet or recordSet
@@ -33,7 +40,7 @@ $data = mysqli_query($conn, $sql); //dataSet or recordSet
                         <td><?php echo $city["id"]; ?></td>
                         <td><?php echo $city["name"]; ?></td>
                         <td><a href="http://localhost/3arabity/homepage/cities/city-edit/editCityForm.php?id=<?php echo $city["id"]; ?>"><button id="edit">Edit</button></a>
-                            <a href="http://localhost/3arabity/homepage/cities/cities-list/cities-delete.php?id=<?php echo $city["id"]; ?>"><button id="del">delete</button></a>
+                            <a href="citiesList.php?id=<?php echo $city["id"]; ?>"><button id="del">delete</button></a>
                         </td>
                     </tr>
                 <?php } ?>

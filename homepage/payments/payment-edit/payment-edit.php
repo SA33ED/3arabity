@@ -1,4 +1,12 @@
 <?php
+if (isset($_POST["pmID"])) {
+    $id = $_POST["pmID"];
+    $name = $_POST["pmName"];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "UPDATE payment_methods SET name='$name' WHERE id='$id'";
+    mysqli_query($conn, $sql);
+    header("Location:../payment-list/payment-list.php");
+}
 
 $id = $_GET["id"];
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
@@ -26,7 +34,7 @@ $row = mysqli_fetch_assoc($data);
             <h1>Edit Payment Method</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="pay-update.php">
+            <form method="post" action="payment-edit.php">
                 <input type="text" placeholder="ID" name="pmID" value="<?php echo $row['id']; ?>" required>
                 <input type="text" placeholder="Enter Payment Method" name="pmName" value="<?php echo $row['name']; ?>" required>
                 <button type="submit" name="save_bt">save</button>

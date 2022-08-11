@@ -1,4 +1,11 @@
 <?php
+if (isset($_GET['id'])) {
+    $id = $_GET["id"];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "DELETE FROM payment_methods WHERE id='$id'";
+    mysqli_query($conn, $sql);
+    header("Location:payment-list.php");
+}
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM payment_methods";
 $data = mysqli_query($conn, $sql);
@@ -39,7 +46,7 @@ $data = mysqli_query($conn, $sql);
                             <a href="../payment-edit/payment-edit.php?id=<?php echo $row["id"]; ?>">
                                 <button id="edit">Edit</button>
                             </a>
-                            <a href="pay-delete.php?id=<?php echo $row["id"]; ?>">
+                            <a href="payment-list.php?id=<?php echo $row["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
                         </td>

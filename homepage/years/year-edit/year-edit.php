@@ -1,4 +1,12 @@
 <?php
+if (isset($_POST["yearID"])) {
+    $id = $_POST['yearID'];
+    $name = $_POST['yearName'];
+    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+    $sql = "UPDATE years SET name='$name' WHERE id='$id'";
+    mysqli_query($conn, $sql);
+    header("Location:../years-list/year-list.php");
+}
 $id = $_GET["id"];
 $conn = mysqli_connect('localhost', 'root', '', '3arabity');
 $sql = "SELECT * FROM years WHERE id='$id'";
@@ -23,7 +31,7 @@ $year = mysqli_fetch_assoc($data);
             <h1>Edit Year</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="year-update.php">
+            <form method="post" action="year-edit.php">
                 <input type="text" placeholder="ID" name="yearID" value="<?php echo $year['id']; ?>" required>
                 <input type="text" placeholder="Enter year" name="yearName" value="<?php echo $year['name']; ?>" required>
                 <button type="submit" name="save_bt">save</button>
