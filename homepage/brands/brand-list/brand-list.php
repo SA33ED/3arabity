@@ -22,10 +22,23 @@ $data = mysqli_query($conn, $sql);
 </head>
 
 <body>
-    <nav class="navbar"><span>3arabity.com</span>
-        <a href="../brand-new/brand-new.php"><button>ADD NEW BRAND</button></a>
-        <a href="../../homepage/homepage.php"><button>Home Page</button></a>
+    <nav class="navbar">
+        <span>3arabity.com |</span>
+        <a href="../../customers/customers-list/customersList.php"><button>Customers</button></a>
+        <a href="../../employees/employee-list/employee-list.php"><button>Employees</button></a>
+        <a href="../../cities/cities-list/citiesList.php"><button>Cities</button></a>
+        <a href="../../departments/departments-list/departments-list.php"><button>Departments</button></a>
+        <a href="../../cars/cars-list/car-list.php"><button>Cars</button></a>
+        <a href="../../brands/brand-list/brand-list.php"><button>Brands</button></a>
+        <a href="../../models/model-list/model-list.php"><button>Models</button></a>
+        <a href="../../colors/color-list/color-list.php"><button>Colors</button></a>
+        <a href="../../years/years-list/year-list.php"><button>Years</button></a>
+        <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
+    <!-- <nav class="navbar"><span>3arabity.com</span>
+        
+        <a href="../../homepage/homepage.php"><button>Home Page</button></a>
+    </nav> -->
     <h1>"Brands List"</h1>
     <table class="table">
         <thead>
@@ -52,6 +65,7 @@ $data = mysqli_query($conn, $sql);
                             <a href="brand-list.php?id=<?php echo $brands["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
+                            <a href="../brand-new/brand-new.php"><button id="new">New Brand</button></a>
 
                         </td>
                     </tr>
