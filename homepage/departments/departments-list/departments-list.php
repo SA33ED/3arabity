@@ -38,7 +38,7 @@ $data = mysqli_query($conn, $sql);
     </nav>
     <!-- <nav class="navbar"><span>3arabity.com</span>
         <a href="../../homepage/homepage.php"><button>Home Page</button></a>
-        <a href="../department-new/department-new.php"><button>ADD NEW DEPARTMENT</button></a>
+
     </nav> -->
     <a href="../department-new/department-new.php"><button>ADD NEW DEPARTMENT</button></a>
 
@@ -63,6 +63,7 @@ $data = mysqli_query($conn, $sql);
                             <a href="departments-list.php?id=<?php echo $row["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
+                            <a href="../department-new/department-new.php"><button id="new">New</button></a>
 
                         </td>
                     </tr>

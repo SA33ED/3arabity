@@ -35,7 +35,7 @@ $data = mysqli_query($conn, $sql);
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
     <!-- <nav class="navbar"><span>3arabity.com</span>
-        <a href="../payment-new/payment-new.php"><button>ADD NEW PAYMENT METHOD</button></a>
+
         <a href="../../homepage/homepage.php"><button>Home Page</button></a>
     </nav> -->
     <a href="../payment-new/payment-new.php"><button>ADD NEW CAR</button></a>
@@ -62,6 +62,7 @@ $data = mysqli_query($conn, $sql);
                             <a href="payment-list.php?id=<?php echo $row["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
+                            <a href="../payment-new/payment-new.php"><button id="new">New</button></a>
                         </td>
                     </tr>
                 <?php } ?>

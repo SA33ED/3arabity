@@ -35,10 +35,6 @@ $data = mysqli_query($conn, $sql);
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
-    <!-- <nav class="navbar"><span>3arabity.com</span>
-        
-        <a href="../../homepage/homepage.php"><button>Home Page</button></a>
-    </nav> -->
     <h1>"Brands List"</h1>
     <table class="table">
         <thead>
