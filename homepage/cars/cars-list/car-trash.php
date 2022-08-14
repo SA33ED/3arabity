@@ -1,17 +1,19 @@
 <?php
 include "../../../basic.php";
 if (isset($_GET["id"])) {
-    brands_delete($_GET["id"],"delete");
+    cars_delete($_GET["id"],"restore");
 }
-$data=brands_list();
-?>
 
+$data=cars_list("trash");
+
+
+?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8">
-    <title>Brands</title>
+    <title>Cars</title>
     <link rel="stylesheet" href="../../../css/design.css">
 </head>
 
@@ -29,37 +31,39 @@ $data=brands_list();
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
-    <h1>"Brands List"</h1>
+    <h1>"Cars List"</h1>
     <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
+                <th>Model ID</th>
+                <th>Color ID</th>
+                <th>Plate Number</th>
+                <th>Year ID</th>
+                <th>Price Per Hour</th>
                 <th>Actions</th>
             </tr>
             <thead>
             <tbody>
-                <?php
-                while ($brands = mysqli_fetch_assoc($data)) { ?>
+                <?php while ($row = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td>
-                            <?php echo $brands["id"]; ?>
-                        </td>
-                        <td>
-                            <?php echo $brands["name"]; ?>
-                        </td>
-                        <td>
-                            <a href="../brand-edit/brand-edit.php?id=<?php echo $brands["id"]; ?>">
-                                <button id="edit">Edit</button>
-                            </a>
-                            <a href="brand-list.php?id=<?php echo $brands["id"]; ?>">
-                                <button id="del">Delete</button>
-                            </a>
-                            <a href="../brand-new/brand-new.php"><button id="new">New Brand</button></a>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['model_id']; ?></td>
+                        <td><?php echo $row['color_id']; ?></td>
+                        <td><?php echo $row['plate_number']; ?></td>
+                        <td><?php echo $row['year_id']; ?></td>
+                        <td><?php echo $row['price_per_hour']; ?></td>
 
+                        <td>
+                            <a href="car-trash.php?id=<?php echo $row["id"]; ?>">
+                                <button id="del">Restore</button>
+                            </a>
                         </td>
                     </tr>
                 <?php } ?>
+
+
+
             </tbody>
     </table>
 </body>

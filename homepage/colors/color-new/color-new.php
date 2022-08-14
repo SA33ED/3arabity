@@ -1,10 +1,7 @@
 <?php
+include "../../../basic.php";
 if (isset($_POST["colorName"])) {
-    $name = $_POST["colorName"];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "INSERT INTO colors (name) VALUES ('$name')";
-    mysqli_query($conn, $sql);
-    header("Location:../color-list/color-list.php");
+    colors_new($_POST["colorName"]);
 }
 ?>
 <!DOCTYPE html>

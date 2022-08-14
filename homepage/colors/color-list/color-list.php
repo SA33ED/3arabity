@@ -1,14 +1,9 @@
 <?php
+include "../../../basic.php";
 if (isset($_GET['id'])) {
-    $id = $_GET["id"];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "DELETE FROM colors WHERE id='$id'";
-    mysqli_query($conn, $sql);
-    header("Location:color-list.php");
+  colors_delete($_GET['id'],"delete");
 }
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM colors";
-$data = mysqli_query($conn, $sql);
+$data=colors_list();
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

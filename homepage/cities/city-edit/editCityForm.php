@@ -1,20 +1,11 @@
 <?php
+include "../../../basic.php";
 if (isset($_POST["ID"])) {
-  $id = $_POST["ID"];
-  $name = $_POST["cityName"];
-  $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-  $sql = "UPDATE cities SET name = '$name' WHERE id='$id'";
-  mysqli_query($conn, $sql);
-  header("Location:../cities-list/citiesList.php");
+  cities_update($_POST["ID"],$_POST["cityName"]);
 }
-
-
-$id = $_GET["id"];
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM cities WHERE id='$id'";
-$data = mysqli_query($conn, $sql);
-$city = mysqli_fetch_assoc($data);
+$city=cities_edit($_GET['id']);
 ?>
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 

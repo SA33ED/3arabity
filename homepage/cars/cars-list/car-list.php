@@ -1,15 +1,10 @@
 <?php
+include "../../../basic.php";
 if (isset($_GET["id"])) {
-    $id = $_GET["id"];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "DELETE FROM cars WHERE id='$id'";
-    mysqli_query($conn, $sql);
-    header("Location:car-list.php");
+    cars_delete($_GET["id"],"delete");
 }
 
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM cars";
-$data = mysqli_query($conn, $sql);
+$data=cars_list();
 
 
 ?>
@@ -36,10 +31,6 @@ $data = mysqli_query($conn, $sql);
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
-    <!-- <nav class="navbar"><span>3arabity.com</span>
-
-        <a href="../../homepage/homepage.php"><button>Home Page</button></a>
-    </nav> -->
     <h1>"Cars List"</h1>
     <table class="table">
         <thead>

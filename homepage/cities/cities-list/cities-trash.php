@@ -1,16 +1,17 @@
 <?php
 include "../../../basic.php";
-if (isset($_POST["brandID"])) {
-  brands_update($_POST["brandID"],$_POST["nbrandName"]);
+if(isset($_GET["id"])){
+  cities_delete($_GET["id"], "restore");
 }
-$brand=brands_edit($_GET["id"]);
+$data = cities_list("deleted");
+?>
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8">
-    <title>Edit Brand</title>
+    <title>Cities</title>
     <link rel="stylesheet" href="../../../css/design.css">
 </head>
 
@@ -28,20 +29,29 @@ $brand=brands_edit($_GET["id"]);
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
+    <h1>"Cities Trash"</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            <thead>
+            <tbody>
+                <?php while ($city = mysqli_fetch_assoc($data)) { ?>
+                    <tr>
+                        <td><?php echo $city["id"]; ?></td>
+                        <td><?php echo $city["name"]; ?></td>
+                        <td>
+                            <a href="cities-trash.php?id=<?php echo $city["id"]; ?>"><button id="del">Restore</button></a>
 
-    <div class="form-contaner">
-        <div class="form-header">
-            <h1>Edit Brand</h1>
-        </div>
-        <div class="form-main">
-            <form method="post" action="brand-edit.php">
-                <input type="text" placeholder="ID" name="brandID" value="<?php echo $brand['id']; ?>" required>
-                <input type="text" placeholder="Enter Brand" name="nbrandName" value="<?php echo $brand['name']; ?>" required>
-                <button type="submit" name="save_bt">save</button>
-                <button><a herf="#">back</a></button>
-            </form>
-        </div>
-    </div>
+                        </td>
+                    </tr>
+                <?php } ?>
+
+            </tbody>
+    </table>
 </body>
 
 </html>

@@ -1,18 +1,9 @@
 <?php
+include "../../../basic.php";
 if (isset($_POST["colorID"])) {
-    $id = $_POST["colorID"];
-    $name = $_POST["colorName"];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "UPDATE colors SET name='$name' WHERE id='$id'";
-    mysqli_query($conn, $sql);
-    header("Location:../color-list/color-list.php");
+ colors_update($_POST["colorID"],$_POST["colorName"]);
 }
-
-$id = $_GET["id"];
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM colors WHERE id='$id'";
-$data = mysqli_query($conn, $sql);
-$color = mysqli_fetch_assoc($data);
+$color=colors_edit($_GET["id"]);
 ?>
 
 <!DOCTYPE html>
