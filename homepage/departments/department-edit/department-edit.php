@@ -1,17 +1,9 @@
 <?php
+include "../../../basic.php";
 if (isset($_POST["dID"])) {
-    $id = $_POST['dID'];
-    $name = $_POST['dName'];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "UPDATE departments SET name='$name' WHERE id='$id'";
-    mysqli_query($conn, $sql);
-    header("Location:../departments-list/departments-list.php");
+    departments_update($_POST["dID"],$_POST["dName"]);
 }
-$id = $_GET['id'];
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM departments WHERE id='$id'";
-$data = mysqli_query($conn, $sql);
-$department = mysqli_fetch_assoc($data);
+$department=departments_edit($_GET["id"]);
 ?>
 
 

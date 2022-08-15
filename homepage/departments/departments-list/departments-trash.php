@@ -1,8 +1,10 @@
 <?php
 include "../../../basic.php";
-if (isset($_POST["dName"])) {
-    departments_new($_POST["dName"]);
+if (isset($_GET['id'])) {
+    departments_delete($_GET['id'],"restore");
 }
+
+$data=departments_list("trash");
 
 
 ?>
@@ -11,12 +13,12 @@ if (isset($_POST["dName"])) {
 
 <head>
     <meta charset="utf-8">
-    <title>New Department</title>
+    <title>Departments</title>
     <link rel="stylesheet" href="../../../css/design.css">
 </head>
 
 <body>
-    <nav class="navbar">
+<nav class="navbar">
         <span>3arabity.com |</span>
         <a href="../../customers/customers-list/customersList.php"><button>Customers</button></a>
         <a href="../../employees/employee-list/employee-list.php"><button>Employees</button></a>
@@ -28,19 +30,35 @@ if (isset($_POST["dName"])) {
         <a href="../../colors/color-list/color-list.php"><button>Colors</button></a>
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
-    </nav>
-    <div class="form-contaner">
-        <div class="form-header">
-            <h1 class="ma">New Department</h1>
-        </div>
-        <div class="form-main">
-            <form method="post" action="department-new.php">
-                <input type="text" placeholder="Enter Department Name" name="dName" required>
-                <button type="submit" name="save_bt">save</button>
-                <button><a herf="#">back</a></button>
-            </form>
-        </div>
-    </div>
+</nav>
+    <a href="../department-new/department-new.php"><button>ADD NEW DEPARTMENT</button></a>
+
+    <h1>"Departments Trash"</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            <thead>
+            <tbody>
+                <?php while ($row = mysqli_fetch_assoc($data)) { ?>
+                    <tr>
+                        <td><?php echo $row["id"]; ?></td>
+                        <td><?php echo $row["name"]; ?></td>
+                        <td>
+                            <a href="departments-trash.php?id=<?php echo $row["id"]; ?>">
+                                <button id="del">Restore</button>
+                            </a>
+                        </td>
+                    </tr>
+
+
+                <?php } ?>
+
+            </tbody>
+    </table>
 </body>
 
 </html>

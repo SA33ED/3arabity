@@ -1,25 +1,9 @@
 <?php
+include "../../../basic.php";
 if (isset($_POST['cID'])) {
-  $id = $_POST["cID"];
-  $name = $_POST["cName"];
-  $phone = $_POST["cPhone"];
-  $address = $_POST["cAddress"];
-  $email = $_POST["cEmail"];
-  $bdate = $_POST["cBdate"];
-  $city_id = $_POST["cityID"];
-  $id_number = $_POST["cNI"];
-  $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-  $sql = "UPDATE Customers
-  SET name = '$name' , phone = '$phone' , address = '$address' , email ='$email' , bdate = '$bdate' , city_id ='$city_id' , id_number ='$id_number'
-  WHERE id = $id;";
-  mysqli_query($conn, $sql);
-  header("Location:../customers-list/customersList");
+  customers_update($_POST["cID"],$_POST["cName"],$_POST["cPhone"],$_POST["cAddress"],$_POST["cEmail"],$_POST["cBdate"],$_POST["cityID"],$_POST["cNI"]);
 }
-$id = $_GET["id"];
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM customers WHERE id='$id'";
-$data = mysqli_query($conn, $sql);
-$customer = mysqli_fetch_assoc($data);
+$customer=customers_edit($_GET["id"]);
 
 ?>
 <!DOCTYPE html>

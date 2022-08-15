@@ -1,15 +1,10 @@
 <?php
+include "../../../basic.php";
 if (isset($_GET['id'])) {
-    $id = $_GET["id"];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "DELETE FROM departments WHERE id='$id'";
-    $data = mysqli_query($conn, $sql);
-    header("Location:departments-list.php");
+    departments_delete($_GET["id"],"delete");
 }
 
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM departments";
-$data = mysqli_query($conn, $sql);
+$data=departments_list("list");
 
 
 ?>
@@ -35,11 +30,7 @@ $data = mysqli_query($conn, $sql);
         <a href="../../colors/color-list/color-list.php"><button>Colors</button></a>
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
-    </nav>
-    <!-- <nav class="navbar"><span>3arabity.com</span>
-        <a href="../../homepage/homepage.php"><button>Home Page</button></a>
-
-    </nav> -->
+</nav>
     <a href="../department-new/department-new.php"><button>ADD NEW DEPARTMENT</button></a>
 
     <h1>"Departments List"</h1>

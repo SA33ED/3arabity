@@ -7,14 +7,14 @@ function colors_update($id,$name){
 };
 
 function colors_edit($id){
-  $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+  global $conn;
   $sql = "SELECT * FROM colors WHERE id='$id'";
   $data = mysqli_query($conn, $sql);
   $color = mysqli_fetch_assoc($data);
   return $color;
 };
 
-function colors_delete($id ,$action){
+function colors_delete($id,$action){
   global $conn;
   if($action=="delete"){
     $sql = "UPDATE colors SET active= 0 WHERE id=$id";

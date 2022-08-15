@@ -1,9 +1,9 @@
 <?php
 include "../../../basic.php";
 if (isset($_GET['id'])) {
-  customers_delete($_GET['id'],"delete");
-};
-$data=customers_list("list");
+  customers_delete($_GET['id'],"restore");
+}
+$data=customers_list("trash");
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -28,13 +28,7 @@ $data=customers_list("list");
     <a href="../../years/years-list/year-list.php"><button>Years</button></a>
     <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
   </nav>
-  <h1>"Customers List"</h1>
-  <a href="../customer-new/newCustomerForm.php">
-    <button id="new">New customer</button>
-  </a>
-  <br>
-    <br>
-
+  <h1>"Customers trash"</h1>
   <table class="table">
     <thead>
       <tr>
@@ -62,13 +56,10 @@ $data=customers_list("list");
             <td><?php echo $customer["city_id"]; ?></td>
             <td><?php echo $customer["id_number"]; ?></td>
             <td>
-              <a href="../customer-edit/editCustomerForm.php?id=<?php echo $customer["id"]; ?>">
-                <button id="edit">Edit</button>
-              </a>
-              <a href="customersList.php?id=<?php echo $customer["id"]; ?>">
-                <button id="del">Delete</button>
-              </a>
 
+              <a href="customers-trash.php?id=<?php echo $customer["id"]; ?>">
+                <button id="del">Restore</button>
+              </a>
 
             </td>
           </tr>
