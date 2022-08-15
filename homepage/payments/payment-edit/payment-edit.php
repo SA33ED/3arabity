@@ -1,20 +1,9 @@
 <?php
+include "../../../basic.php";
 if (isset($_POST["pmID"])) {
-    $id = $_POST["pmID"];
-    $name = $_POST["pmName"];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "UPDATE payment_methods SET name='$name' WHERE id='$id'";
-    mysqli_query($conn, $sql);
-    header("Location:../payment-list/payment-list.php");
+    payments_update($_POST["pmID"],$_POST["pmName"]);
 }
-
-$id = $_GET["id"];
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM payment_methods WHERE id='$id'";
-$data = mysqli_query($conn, $sql);
-$row = mysqli_fetch_assoc($data);
-
-
+$row=payments_edit($_GET["id"]);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

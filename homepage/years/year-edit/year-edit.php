@@ -1,17 +1,9 @@
 <?php
+include "../../../basic.php";
 if (isset($_POST["yearID"])) {
-    $id = $_POST['yearID'];
-    $name = $_POST['yearName'];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "UPDATE years SET name='$name' WHERE id='$id'";
-    mysqli_query($conn, $sql);
-    header("Location:../years-list/year-list.php");
+    years_update($_POST['yearID'],$_POST['yearName']);
 }
-$id = $_GET["id"];
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM years WHERE id='$id'";
-$data = mysqli_query($conn, $sql);
-$year = mysqli_fetch_assoc($data);
+$year=years_edit($_GET["id"]);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

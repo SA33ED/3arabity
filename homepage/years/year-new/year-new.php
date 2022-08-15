@@ -1,10 +1,7 @@
 <?php
+include "../../../basic.php";
 if (isset($_POST["yearName"])) {
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $name = $_POST['yearName'];
-    $sql = "INSERT INTO years (name) VALUES ('$name')";
-    mysqli_query($conn, $sql);
-    header("Location:../years-list/year-list.php");
+    years_new($_POST["yearName"]);
 }
 ?>
 <!DOCTYPE html>

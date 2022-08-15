@@ -1,14 +1,9 @@
 <?php
+include "../../../basic.php";
 if (isset($_GET['id'])) {
-    $id = $_GET["id"];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "DELETE FROM payment_methods WHERE id='$id'";
-    mysqli_query($conn, $sql);
-    header("Location:payment-list.php");
+    payments_delete($_GET["id"],"delete");
 }
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM payment_methods";
-$data = mysqli_query($conn, $sql);
+$data=payments_list("list");
 ?>
 
 <!DOCTYPE html>
@@ -34,10 +29,6 @@ $data = mysqli_query($conn, $sql);
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
-    <!-- <nav class="navbar"><span>3arabity.com</span>
-
-        <a href="../../homepage/homepage.php"><button>Home Page</button></a>
-    </nav> -->
     <a href="../payment-new/payment-new.php"><button>ADD NEW CAR</button></a>
     <a href="../../homepage/homepage.php"><button>Home Page</button></a>
     </nav>

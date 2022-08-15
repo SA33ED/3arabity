@@ -1,22 +1,23 @@
 <?php
 include "../../../basic.php";
 if (isset($_GET['id'])) {
-    models_delete($_GET["id"],"delete");
+    employees_delete($_GET['id'],"restore");
 }
-$data=models_list("list");
+
+$data=employees_list("trash");
 ?>
-<!--............................................-->
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8">
-    <title>Models</title>
+    <title>Employees</title>
     <link rel="stylesheet" href="../../../css/design.css">
 </head>
 
 <body>
-    <nav class="navbar">
+<nav class="navbar">
         <span>3arabity.com |</span>
         <a href="../../customers/customers-list/customersList.php"><button>Customers</button></a>
         <a href="../../employees/employee-list/employee-list.php"><button>Employees</button></a>
@@ -29,41 +30,43 @@ $data=models_list("list");
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
-    <!-- <nav class="navbar"><span>3arabity.com </span>
-
-        <a href="../../homepage/homepage.php"><button>Home Page</button></a>
-
-    </nav> -->
-    <h1>"Models List"</h1>
+    <h1>"Employees trash"</h1>
     <table class="table">
         <thead>
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Brand ID</th>
-                <th>Active</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Email</th>
+                <th>Department ID</th>
+                <th>Basic Salary</th>
+                <th>Actions</th>
             </tr>
             <thead>
             <tbody>
-                <?php while ($model = mysqli_fetch_assoc($data)) { ?>
-                    <tr>
-                        <td><?php echo $model["id"]; ?></td>
-                        <td><?php echo $model["name"]; ?></td>
-                        <td><?php echo $model["brand_id"]; ?></td>
-                        <td>
+                <?php while ($employee = mysqli_fetch_assoc($data)) { ?>
 
-                            <a href="../model-edit/model-edit.php?id=<?php echo $model["id"]; ?>">
-                                <button id="edit">Edit</button>
+                    <tr>
+                        <td><?php echo $employee["id"]; ?> </td>
+                        <td><?php echo $employee["name"]; ?> </td>
+                        <td><?php echo $employee["phone"]; ?></td>
+                        <td><?php echo $employee["address"]; ?></td>
+                        <td><?php echo $employee["email"]; ?></td>
+                        <td><?php echo $employee["department_id"]; ?></td>
+                        <td><?php echo $employee["basic_salary"]; ?></td>
+                        <td>
+                            <a href="employee-trash.php?id=<?php echo $employee["id"]; ?>">
+                                <button id="del">Restore</button>
                             </a>
-                            <a href="model-list.php?id=<?php echo $model["id"]; ?>">
-                                <button id="del">Delete</button>
-                            </a>
-                            <a href="../model-new/model-new.php">
-                                <button id="new">New Model</button>
-                            </a>
+                            
+
                         </td>
                     </tr>
+
                 <?php } ?>
+
+
 
             </tbody>
     </table>

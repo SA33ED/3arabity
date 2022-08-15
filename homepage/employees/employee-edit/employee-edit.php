@@ -1,24 +1,9 @@
 <?php
+include "../../../basic.php";
 if (isset($_POST["eID"])) {
-    $id = $_POST["eID"];
-    $name = $_POST["eName"];
-    $phone = $_POST["ePhone"];
-    $address = $_POST["eAddress"];
-    $email = $_POST["eEmail"];
-    $dID = $_POST["dID"];
-    $bsalary = $_POST["bsalary"];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "UPDATE employees
-    SET name = '$name' , phone = '$phone' , address = '$address' , email ='$email' , department_id='$dID' , basic_salary='$bsalary'
-    WHERE id ='$id';";
-    mysqli_query($conn, $sql);
-    header("Location:../employee-list/employee-list.php");
+    employees_update($_POST["eID"],$_POST["eName"],$_POST["ePhone"],$_POST["eAddress"],$_POST["eEmail"],$_POST["dID"],$_POST["bsalary"]);
 }
-$id = $_GET["id"];
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM employees WHERE id='$id'";
-$data = mysqli_query($conn, $sql);
-$employee = mysqli_fetch_assoc($data);
+$employee=employees_edit($_GET["id"]);
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

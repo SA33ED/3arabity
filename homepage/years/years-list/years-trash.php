@@ -1,16 +1,17 @@
 <?php
-include "../../../basic.php";
+include"../../../basic.php";
+if (isset($_GET['id'])) {
 
-if (isset($_POST["pmName"])) {
-    payments_new($_POST['pmName']);
+    years_delete($_GET["id"],"restore");
 }
+$data=years_list("trash");
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
     <meta charset="utf-8">
-    <title>New Payment Method</title>
+    <title>Year</title>
     <link rel="stylesheet" href="../../../css/design.css">
 </head>
 
@@ -28,18 +29,34 @@ if (isset($_POST["pmName"])) {
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
-    <div class="form-contaner">
-        <div class="form-header">
-            <h1>New Payment Method</h1>
-        </div>
-        <div class="form-main">
-            <form method="post" action="payment-new.php">
-                <input type="text" placeholder="Enter Payment Method" name="pmName" required>
-                <button type="submit" name="save_bt">save</button>
-                <button><a herf="#">back</a></button>
-            </form>
-        </div>
-    </div>
+    <h1>"Years Trash"</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Actions</th>
+            </tr>
+            <thead>
+            <tbody>
+                <?php while ($row = mysqli_fetch_assoc($data)) { ?>
+
+                    <tr>
+                        <td><?php echo $row['id'] ?></td>
+                        <td><?php echo $row['name'] ?></td>
+                        <td>
+                            <a href="years-trash.php?id=<?php echo $row["id"]; ?>">
+                                <button id="del">Restore</button>
+                            </a>
+                        </td>
+                    </tr>
+
+                <?php } ?>
+
+
+
+            </tbody>
+    </table>
 </body>
 
 </html>

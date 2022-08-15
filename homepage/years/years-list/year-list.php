@@ -1,14 +1,10 @@
 <?php
+include"../../../basic.php";
 if (isset($_GET['id'])) {
-    $id = $_GET["id"];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "DELETE FROM years WHERE id='$id'";
-    mysqli_query($conn, $sql);
-    header("Location:year-list.php");
+
+    years_delete($_GET["id"],"delete");
 }
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM years";
-$data = mysqli_query($conn, $sql);
+$data=years_list("list");
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
