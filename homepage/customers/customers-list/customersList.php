@@ -28,6 +28,7 @@ $data=customers_list("list");
     <a href="../../years/years-list/year-list.php"><button>Years</button></a>
     <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
   </nav>
+  <br>
   <h1>"Customers List"</h1>
   <a href="../customer-new/newCustomerForm.php">
     <button id="new">New customer</button>

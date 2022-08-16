@@ -28,11 +28,11 @@ $data=colors_list();
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
-    <!-- <nav class="navbar"><span>3arabity.com</span>
-
-        <a href="../../homepage/homepage.php"><button>Home Page</button></a>
-    </nav> -->
+    <br>
     <h1>"colors List"</h1>
+    <a href="../color-new/color-new.php"><button id="new">Add New Color</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>
@@ -54,7 +54,6 @@ $data=colors_list();
                             <a href="color-list.php?id=<?php echo $colors["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
-                            <a href="../color-new/color-new.php"><button id="new">NEW COLOR</button></a>
                         </td>
                     </tr>
 

@@ -29,7 +29,11 @@ $data = cities_list();
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
+    <br>
     <h1>"Cities List"</h1>
+    <a href="../city-new/newCityForm.php"><button id="new">ADD NEW CITY</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>
@@ -45,7 +49,6 @@ $data = cities_list();
                         <td><?php echo $city["name"]; ?></td>
                         <td><a href="../city-edit/editCityForm?id=<?php echo $city["id"]; ?>"><button id="edit">Edit</button></a>
                             <a href="citiesList.php?id=<?php echo $city["id"]; ?>"><button id="del">delete</button></a>
-                            <a href="../city-new/newCityForm.php"><button id="new">ADD NEW CITY</button></a>
                         </td>
                     </tr>
                 <?php } ?>

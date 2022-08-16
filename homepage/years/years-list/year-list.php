@@ -29,7 +29,11 @@ $data=years_list("list");
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
+    <br>
     <h1>"Years List"</h1>
+    <a href="../year-new/year-new.php"><button id="new">Add New Year</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>
@@ -51,7 +55,6 @@ $data=years_list("list");
                             <a href="year-list.php?id=<?php echo $row["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
-                            <a href="../year-new/year-new.php"><button id="new">New</button></a>
                         </td>
                     </tr>
 

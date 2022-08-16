@@ -29,7 +29,11 @@ $data=brands_list();
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
+    <br>
     <h1>"Brands List"</h1>
+    <a href="../brand-new/brand-new.php"><button id="new">Add New Brand</button></a>
+        <br>
+        <br>
     <table class="table">
         <thead>
             <tr>
@@ -55,7 +59,6 @@ $data=brands_list();
                             <a href="brand-list.php?id=<?php echo $brands["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
-                            <a href="../brand-new/brand-new.php"><button id="new">New Brand</button></a>
 
                         </td>
                     </tr>

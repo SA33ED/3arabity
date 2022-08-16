@@ -31,9 +31,12 @@ $data=departments_list("list");
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
 </nav>
-    <a href="../department-new/department-new.php"><button>ADD NEW DEPARTMENT</button></a>
 
+<br>
     <h1>"Departments List"</h1>
+    <a href="../department-new/department-new.php"><button id="new">Add New Department</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>
@@ -54,7 +57,7 @@ $data=departments_list("list");
                             <a href="departments-list.php?id=<?php echo $row["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
-                            <a href="../department-new/department-new.php"><button id="new">New</button></a>
+
 
                         </td>
                     </tr>

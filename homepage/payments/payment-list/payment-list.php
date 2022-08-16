@@ -32,7 +32,11 @@ $data=payments_list("list");
     <a href="../payment-new/payment-new.php"><button>ADD NEW CAR</button></a>
     <a href="../../homepage/homepage.php"><button>Home Page</button></a>
     </nav>
+    <br>
     <h1>"Payments Methods"</h1>
+    <a href="../payment-new/payment-new.php"><button id="new">Add New Payment Method</button></a>
+<br>
+<br>
     <table class="table">
         <thead>
             <tr>
@@ -53,7 +57,6 @@ $data=payments_list("list");
                             <a href="payment-list.php?id=<?php echo $row["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
-                            <a href="../payment-new/payment-new.php"><button id="new">New</button></a>
                         </td>
                     </tr>
                 <?php } ?>

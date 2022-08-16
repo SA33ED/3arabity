@@ -30,7 +30,11 @@ $data=employees_list("list");
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
+    <br>
     <h1>"Employees List"</h1>
+    <a href="../employee-new/employee-new.php"><button id="new">New Employee</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>
@@ -61,9 +65,7 @@ $data=employees_list("list");
                             <a href="employee-list.php?id=<?php echo $employee["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
-                            <a href="../employee-new/employee-new.php" >
-                               <button id="new">New Employee</button>
-                             </a>
+                            
 
                         </td>
                     </tr>

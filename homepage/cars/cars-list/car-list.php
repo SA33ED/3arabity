@@ -31,7 +31,11 @@ $data=cars_list();
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
+    <br>
     <h1>"Cars List"</h1>
+    <a href="../cars-new/cars-new.php"><button id="new">ADD NEW CAR</button></a>
+    <br><br>
+
     <table class="table">
         <thead>
             <tr>
@@ -61,7 +65,6 @@ $data=cars_list();
                             <a href="car-list.php?id=<?php echo $row["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
-                            <a href="../cars-new/cars-new.php"><button id="new">ADD NEW CAR</button></a>
                         </td>
                     </tr>
                 <?php } ?>

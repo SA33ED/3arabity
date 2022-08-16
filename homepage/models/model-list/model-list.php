@@ -29,12 +29,11 @@ $data=models_list("list");
         <a href="../../years/years-list/year-list.php"><button>Years</button></a>
         <a href="../../payments/payment-list/payment-list.php"><button>Payments</button></a>
     </nav>
-    <!-- <nav class="navbar"><span>3arabity.com </span>
-
-        <a href="../../homepage/homepage.php"><button>Home Page</button></a>
-
-    </nav> -->
+    <br>
     <h1>"Models List"</h1>
+    <a href="../model-new/model-new.php"><button id="new">New Model</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>
@@ -58,9 +57,7 @@ $data=models_list("list");
                             <a href="model-list.php?id=<?php echo $model["id"]; ?>">
                                 <button id="del">Delete</button>
                             </a>
-                            <a href="../model-new/model-new.php">
-                                <button id="new">New Model</button>
-                            </a>
+                            
                         </td>
                     </tr>
                 <?php } ?>
