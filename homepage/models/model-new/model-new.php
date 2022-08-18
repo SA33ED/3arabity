@@ -1,15 +1,9 @@
 <?php
+include "../../../basic.php";
 if (isset($_POST["modelName"])) {
-    $name = $_POST['modelName'];
-    $bid = $_POST['brandID'];
-    $conn = mysqli_connect('localhost', 'root', '', '3arabity');
-    $sql = "INSERT INTO models (name , brand_id) VALUES ('$name','$bid')";
-    mysqli_query($conn, $sql);
-    header("Location:../model-list/model-list.php");
+    models_new($_POST['modelName'],$_POST['brandID']);
 }
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM brands";
-$data1 = mysqli_query($conn, $sql);
+$data1=brands_list("list");
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

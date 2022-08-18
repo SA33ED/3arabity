@@ -32,6 +32,9 @@ $data=brands_list();
     <br>
     <h1>"Brands List"</h1>
     <a href="../brand-new/brand-new.php"><button id="new">Add New Brand</button></a>
+    <br>
+        <br>
+    <a href="brand-trash.php"><button id="new">Brands Trash</button></a>
         <br>
         <br>
     <table class="table">

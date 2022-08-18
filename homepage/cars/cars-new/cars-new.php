@@ -3,13 +3,16 @@ include "../../../basic.php";
 if (isset($_POST["model_id"])) {
   cars_new($_POST['model_id'],$_POST['color_id'],$_POST['plate_number'],$_POST['year_id'],$_POST['p_p_h']);    
 }
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM models";
-$sql1 = "SELECT * FROM colors";
-$sql2 = "SELECT * FROM years";
-$data1 = mysqli_query($conn, $sql);
-$data2 = mysqli_query($conn, $sql1);
-$data3 = mysqli_query($conn, $sql2);
+// $conn = mysqli_connect('localhost', 'root', '', '3arabity');
+// $sql = "SELECT * FROM models";
+// $sql1 = "SELECT * FROM colors";
+// $sql2 = "SELECT * FROM years";
+// $data1 = mysqli_query($conn, $sql);
+// $data2 = mysqli_query($conn, $sql1);
+// $data3 = mysqli_query($conn, $sql2);
+$data1=models_list("list");
+$data2=colors_list("list");
+$data3=years_list("list");
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

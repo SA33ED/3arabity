@@ -34,6 +34,9 @@ $data=models_list("list");
     <a href="../model-new/model-new.php"><button id="new">New Model</button></a>
     <br>
     <br>
+    <a href="model-trash.php"><button id="new">Models Trash</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>
@@ -48,7 +51,7 @@ $data=models_list("list");
                     <tr>
                         <td><?php echo $model["id"]; ?></td>
                         <td><?php echo $model["name"]; ?></td>
-                        <td><?php echo $model["brand_id"]; ?></td>
+                        <td><?php echo $model["brandName"]; ?></td>
                         <td>
 
                             <a href="../model-edit/model-edit.php?id=<?php echo $model["id"]; ?>">

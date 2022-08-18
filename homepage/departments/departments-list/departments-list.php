@@ -37,6 +37,9 @@ $data=departments_list("list");
     <a href="../department-new/department-new.php"><button id="new">Add New Department</button></a>
     <br>
     <br>
+    <a href="departments-trash.php"><button id="new">Departments Trash</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>

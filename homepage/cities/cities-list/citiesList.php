@@ -1,7 +1,7 @@
 <?php
 include "../../../basic.php";
 if(isset($_GET["id"])){
-  cities_delete($_GET["id"], "delete");
+  cities_delete($_GET["id"], $_GET["action"]);
 }
 $data = cities_list();
 ?>
@@ -34,6 +34,10 @@ $data = cities_list();
     <a href="../city-new/newCityForm.php"><button id="new">ADD NEW CITY</button></a>
     <br>
     <br>
+    <a href="cities-trash.php"><button id="new">Cities Trash</button></a>
+
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>
@@ -48,7 +52,7 @@ $data = cities_list();
                         <td><?php echo $city["id"]; ?></td>
                         <td><?php echo $city["name"]; ?></td>
                         <td><a href="../city-edit/editCityForm?id=<?php echo $city["id"]; ?>"><button id="edit">Edit</button></a>
-                            <a href="citiesList.php?id=<?php echo $city["id"]; ?>"><button id="del">delete</button></a>
+                            <a href="citiesList.php?id=<?php echo $city["id"];?>&action=delete"><button id="del">delete</button></a>
                         </td>
                     </tr>
                 <?php } ?>

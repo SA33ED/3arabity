@@ -36,10 +36,10 @@ $data=cars_list("trash");
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Model ID</th>
-                <th>Color ID</th>
+                <th>Model</th>
+                <th>Color</th>
                 <th>Plate Number</th>
-                <th>Year ID</th>
+                <th>Year</th>
                 <th>Price Per Hour</th>
                 <th>Actions</th>
             </tr>
@@ -48,10 +48,10 @@ $data=cars_list("trash");
                 <?php while ($row = mysqli_fetch_assoc($data)) { ?>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['model_id']; ?></td>
-                        <td><?php echo $row['color_id']; ?></td>
+                        <td><?php echo $row['modelName']; ?></td>
+                        <td><?php echo $row['colorName']; ?></td>
                         <td><?php echo $row['plate_number']; ?></td>
-                        <td><?php echo $row['year_id']; ?></td>
+                        <td><?php echo $row['yearName']; ?></td>
                         <td><?php echo $row['price_per_hour']; ?></td>
 
                         <td>

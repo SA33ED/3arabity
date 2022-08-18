@@ -3,10 +3,7 @@ include "../../../basic.php";
 if (isset($_GET["id"])) {
     cars_delete($_GET["id"],"delete");
 }
-
 $data=cars_list();
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -34,6 +31,10 @@ $data=cars_list();
     <br>
     <h1>"Cars List"</h1>
     <a href="../cars-new/cars-new.php"><button id="new">ADD NEW CAR</button></a>
+    <br>
+    <br>
+    <a href="car-trash.php"><button id="new">Cars Trash</button></a>
+
     <br><br>
 
     <table class="table">
@@ -52,10 +53,10 @@ $data=cars_list();
                 <?php while ($row = mysqli_fetch_assoc($data)) { ?>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
-                        <td><?php echo $row['model_id']; ?></td>
-                        <td><?php echo $row['color_id']; ?></td>
+                        <td><?php echo $row['modelName']; ?></td>
+                        <td><?php echo $row['colorName']; ?></td>
                         <td><?php echo $row['plate_number']; ?></td>
-                        <td><?php echo $row['year_id']; ?></td>
+                        <td><?php echo $row['yearName']; ?></td>
                         <td><?php echo $row['price_per_hour']; ?></td>
 
                         <td>

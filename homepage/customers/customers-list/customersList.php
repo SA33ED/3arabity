@@ -34,7 +34,12 @@ $data=customers_list("list");
     <button id="new">New customer</button>
   </a>
   <br>
-    <br>
+  <br>
+  <a href="customers-trash.php">
+    <button id="new">Customers Trash</button>
+  </a>
+  <br>
+  <br>
 
   <table class="table">
     <thead>
@@ -45,7 +50,7 @@ $data=customers_list("list");
         <th>Address</th>
         <th>Email</th>
         <th>Birth date</th>
-        <th>City ID</th>
+        <th>City</th>
         <th>National ID</th>
         <th>Actions</th>
       </tr>
@@ -60,7 +65,7 @@ $data=customers_list("list");
             <td><?php echo $customer["address"]; ?></td>
             <td><?php echo $customer["email"]; ?></td>
             <td><?php echo $customer["bdate"]; ?></td>
-            <td><?php echo $customer["city_id"]; ?></td>
+            <td><?php echo $customer["cityname"]; ?></td>
             <td><?php echo $customer["id_number"]; ?></td>
             <td>
               <a href="../customer-edit/editCustomerForm.php?id=<?php echo $customer["id"]; ?>">

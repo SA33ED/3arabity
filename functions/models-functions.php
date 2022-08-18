@@ -30,18 +30,19 @@ function models_delete($id,$action){
 function models_list($x="list"){
   global $conn;
   if($x=="list"){
-      $sql = "SELECT * FROM models WHERE active=1";
+      $sql = "SELECT models.* , brands.name AS brandName FROM models , brands WHERE brands.id = models.brand_id AND models.active=1";
   }elseif ($x=="trash") {
-      $sql = "SELECT * FROM models WHERE active=0";
+    $sql = "SELECT models.* , brands.name AS brandName FROM models , brands WHERE brands.id = models.brand_id AND models.active=0";
+
   }
   $data = mysqli_query($conn, $sql);
   return $data;
 };
 
-function models_new($name){
+function models_new($name , $brand_id){
   global $conn;
-  $sql = "INSERT INTO colors (name) VALUES ('$name')";
+  $sql = "INSERT INTO models (name , brand_id) VALUES ('$name' , '$brand_id')";
   mysqli_query($conn, $sql);
-  header("Location:../color-list/color-list.php");
+  header("Location:../model-list/model-list.php");
 };
 ?>

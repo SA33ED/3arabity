@@ -35,8 +35,11 @@ $data=payments_list("list");
     <br>
     <h1>"Payments Methods"</h1>
     <a href="../payment-new/payment-new.php"><button id="new">Add New Payment Method</button></a>
-<br>
-<br>
+    <br>
+    <br>
+    <a href="payment-trash.php"><button id="new">Payment Methods Trash</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>

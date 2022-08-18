@@ -33,6 +33,9 @@ $data=colors_list();
     <a href="../color-new/color-new.php"><button id="new">Add New Color</button></a>
     <br>
     <br>
+    <a href="colors-trash.php"><button id="new">Colors Trash</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>

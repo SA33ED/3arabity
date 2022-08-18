@@ -1,7 +1,13 @@
 <?php
 include "../../../basic.php";
 if (isset($_POST["cityName"])) {
-  cities_new($_POST["cityName"]);
+  $name=$_FILES["image"]["tmp_name"];
+  $location="../../../img/cities/";
+  $filename=strtolower($_POST["cityName"]);
+  $filename=str_replace(" ","-",$filename);
+  $filename=$filename . "-logo.png";
+  move_uploaded_file($name,$location.$filename);
+  cities_new($_POST["cityName"],$filename);
 }
 ?>
 <!DOCTYPE html>
@@ -32,8 +38,9 @@ if (isset($_POST["cityName"])) {
       <h1>New City</h1>
     </div>
     <div class="form-main">
-      <form method="post" action="newCityForm.php">
+      <form method="post" action="newCityForm.php" enctype="multipart/form-data">
         <input type="text" placeholder="Enter City Name" name="cityName" required>
+        <input type="file" placeholder="Image" name="image" required>
         <button type="submit" name="save_bt">save</button>
         <button><a herf="#">back</a></button>
       </form>

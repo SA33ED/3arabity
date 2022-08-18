@@ -39,7 +39,7 @@ $data=employees_list("trash");
                 <th>Phone</th>
                 <th>Address</th>
                 <th>Email</th>
-                <th>Department ID</th>
+                <th>Department</th>
                 <th>Basic Salary</th>
                 <th>Actions</th>
             </tr>
@@ -53,7 +53,7 @@ $data=employees_list("trash");
                         <td><?php echo $employee["phone"]; ?></td>
                         <td><?php echo $employee["address"]; ?></td>
                         <td><?php echo $employee["email"]; ?></td>
-                        <td><?php echo $employee["department_id"]; ?></td>
+                        <td><?php echo $employee["departmentName"]; ?></td>
                         <td><?php echo $employee["basic_salary"]; ?></td>
                         <td>
                             <a href="employee-trash.php?id=<?php echo $employee["id"]; ?>">

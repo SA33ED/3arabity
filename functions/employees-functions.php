@@ -32,9 +32,10 @@ function employees_delete($id,$action){
 function employees_list($x){
     global $conn;
     if($x=="list"){
-        $sql = "SELECT * FROM employees WHERE active=1";
+        $sql = "SELECT employees.* , departments.name AS departmentName FROM employees , departments WHERE departments.id = employees.department_id AND employees.active=1";
     }elseif($x=="trash"){
-        $sql = "SELECT * FROM employees WHERE active=0";
+        $sql = "SELECT employees.* , departments.name AS departmentName FROM employees , departments WHERE departments.id = employees.department_id AND employees.active=0";
+
     }
     $data = mysqli_query($conn, $sql);
     return $data;

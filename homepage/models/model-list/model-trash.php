@@ -34,7 +34,7 @@ $data=models_list("trash");
             <tr>
                 <th>ID</th>
                 <th>Name</th>
-                <th>Brand ID</th>
+                <th>Brand</th>
                 <th>Active</th>
             </tr>
             <thead>
@@ -43,7 +43,7 @@ $data=models_list("trash");
                     <tr>
                         <td><?php echo $model["id"]; ?></td>
                         <td><?php echo $model["name"]; ?></td>
-                        <td><?php echo $model["brand_id"]; ?></td>
+                        <td><?php echo $model["brandName"]; ?></td>
                         <td>
                             <a href="model-trash.php?id=<?php echo $model["id"]; ?>">
                                 <button id="del">Restore</button>

@@ -35,6 +35,9 @@ $data=employees_list("list");
     <a href="../employee-new/employee-new.php"><button id="new">New Employee</button></a>
     <br>
     <br>
+    <a href="employee-trash.php"><button id="new">Employees Trash</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>
@@ -57,7 +60,7 @@ $data=employees_list("list");
                         <td><?php echo $employee["phone"]; ?></td>
                         <td><?php echo $employee["address"]; ?></td>
                         <td><?php echo $employee["email"]; ?></td>
-                        <td><?php echo $employee["department_id"]; ?></td>
+                        <td><?php echo $employee["departmentName"]; ?></td>
                         <td><?php echo $employee["basic_salary"]; ?></td>
                         <td><a href="../employee-edit/employee-edit.php?id=<?php echo $employee["id"]; ?>">
                                 <button id="edit">Edit</button>

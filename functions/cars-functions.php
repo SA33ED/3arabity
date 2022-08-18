@@ -30,9 +30,10 @@ function cars_delete($id ,$action){
 function cars_list($x="list"){
   global $conn;
   if($x=="list"){
-      $sql = "SELECT * FROM cars WHERE active=1";
+      $sql = "SELECT cars.* , models.name AS modelName , colors.name AS colorName , years.name AS yearName FROM cars , models , colors , years WHERE models.id = cars.model_id AND colors.id = cars.color_id AND years.id = cars.year_id AND cars.active=1";
   }elseif ($x=="trash") {
-      $sql = "SELECT * FROM cars WHERE active=0";
+    $sql = "SELECT cars.* , models.name AS modelName , colors.name AS colorName , years.name AS yearName FROM cars , models , colors , years WHERE models.id = cars.model_id AND colors.id = cars.color_id AND years.id = cars.year_id AND cars.active=0";
+
   }
   $data = mysqli_query($conn, $sql);
   return $data;

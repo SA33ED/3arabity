@@ -10,24 +10,25 @@ function cities_list($status = "active"){
   return $data;
 }
 
-function cities_new($city){
+function cities_new($city,$imagename){
   global $conn;
-  $sql = "INSERT INTO cities (name) VALUES ('$city')";
+  $sql = "INSERT INTO cities (name , image) VALUES ('$city' , '$imagename')";
   mysqli_query($conn, $sql);
   header("Location:../cities-list/citiesList.php");
 }
 
 function cities_delete($id, $action){
   global $conn;
-  //$sql = "DELETE FROM cities WHERE id = '$id'";
   if ($action == "delete"){
       $sql = "UPDATE cities SET active = 0 WHERE id = '$id'";
       $location = "citiesList.php";
   } elseif($action == "restore"){
       $sql = "UPDATE cities SET active = 1 WHERE id = '$id'";
       $location = "cities-trash.php";
+  }elseif($action=="forever"){
+    $sql="DELETE FROM cities WHERE id='$id'";
+    $location = "cities-trash.php";
   }
-
   mysqli_query($conn, $sql);
   header("Location: $location");
 }

@@ -34,6 +34,9 @@ $data=years_list("list");
     <a href="../year-new/year-new.php"><button id="new">Add New Year</button></a>
     <br>
     <br>
+    <a href="years-trash.php"><button id="new">Years Trash</button></a>
+    <br>
+    <br>
     <table class="table">
         <thead>
             <tr>

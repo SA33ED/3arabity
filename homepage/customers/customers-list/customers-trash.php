@@ -38,7 +38,7 @@ $data=customers_list("trash");
         <th>Address</th>
         <th>Email</th>
         <th>Birth date</th>
-        <th>City ID</th>
+        <th>City</th>
         <th>National ID</th>
         <th>Actions</th>
       </tr>
@@ -53,7 +53,7 @@ $data=customers_list("trash");
             <td><?php echo $customer["address"]; ?></td>
             <td><?php echo $customer["email"]; ?></td>
             <td><?php echo $customer["bdate"]; ?></td>
-            <td><?php echo $customer["city_id"]; ?></td>
+            <td><?php echo $customer["cityname"]; ?></td>
             <td><?php echo $customer["id_number"]; ?></td>
             <td>
 

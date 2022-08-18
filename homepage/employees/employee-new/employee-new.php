@@ -3,9 +3,7 @@ include "../../../basic.php";
 if (isset($_POST["eName"])) {
     employees_new($_POST["eName"],$_POST["ePhone"],$_POST["eAddress"],$_POST["eEmail"],$_POST["dID"],$_POST["bsalary"]);
 }
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM departments";
-$data1 = mysqli_query($conn, $sql);
+$data1=departments_list("list");
 ?>
 
 <!DOCTYPE html>

@@ -32,13 +32,17 @@ function customers_delete($id,$action){
 function customers_list($x="list"){
   global $conn;
   if($x=="list"){
-      $sql = "SELECT * FROM customers WHERE active=1";
+      //$sql = "SELECT * FROM customers WHERE active=1";
+      $sql = "SELECT customers.*, cities.name AS cityname FROM customers, cities WHERE cities.id = customers.city_id AND customers.active=1";
+
   }elseif($x=="trash"){
-      $sql = "SELECT * FROM customers WHERE active=0";
+    $sql = "SELECT customers.*, cities.name AS cityname FROM customers, cities WHERE cities.id = customers.city_id AND customers.active=0";
+
   };
   $data = mysqli_query($conn, $sql);
   return $data;
 };
+//$sql = "SELECT customers.*, cities.name AS cityname FROM customers, cities WHERE cities.id = customers.city_id AND customers.active=1";
 
 function customers_new($name,$ni,$phone,$address,$email,$bdate,$city){
   global $conn;

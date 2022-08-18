@@ -3,10 +3,7 @@ include "../../../basic.php";
 if (isset($_POST['cName'])) {
   customers_new($_POST["cName"],$_POST["cNI"],$_POST["cPhone"],$_POST["cAddress"],$_POST["cEmail"],$_POST["cBdate"],$_POST["city_id"]);
 }
-$conn = mysqli_connect('localhost', 'root', '', '3arabity');
-$sql = "SELECT * FROM cities";
-$data1 = mysqli_query($conn, $sql);
-?>
+$data1=cities_list("active");?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
