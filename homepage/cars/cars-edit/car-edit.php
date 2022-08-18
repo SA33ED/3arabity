@@ -1,7 +1,7 @@
 <?php
 include "../../../basic.php";
 if (isset($_POST["carID"])) {
-  cars_update($_POST["carID"],$_POST['model_id'],$_POST['color_id'],$_POST['plate_number'],$_POST['year_id'],$_POST['p_p_h']);
+  cars_update($_POST["carID"],$_POST['model_id'],$_POST['color_id'],$_POST['plate_number'],$_POST['year_id'],$_POST['p_p_h'],$_FILES["image"]);
 }
 $row=cars_edit($_GET["id"]);
 ?>
@@ -33,8 +33,10 @@ $row=cars_edit($_GET["id"]);
             <h1>Edit Car</h1>
         </div>
         <div class="form-main">
-            <form method="post" action="car-edit.php">
-                <input type="text" placeholder="ID" name="carID" value="<?php echo $row['id']; ?>" required>
+            <form method="post" action="car-edit.php" enctype="multipart/form-data">
+                <input type="hidden" placeholder="ID" name="carID" value="<?php echo $row['id']; ?>" required>
+                <img class="cars-logo" src="../../../img/cars/<?php echo $row["image"]; ?>">
+                <input type="file" name="image"><br><br>
                 <input type="text" placeholder="Enter Model ID" name="model_id" value="<?php echo $row['model_id']; ?>" required>
                 <input type="text" placeholder="Enter Color ID" name="color_id" value="<?php echo $row['color_id']; ?>" required>
                 <input type="text" placeholder="Enter Plate Number" name="plate_number" value="<?php echo $row['plate_number']; ?>" required>

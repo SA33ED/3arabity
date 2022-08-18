@@ -35,7 +35,8 @@ $data=cars_list("trash");
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
+                <th>#</th>
+                <th>Brand</th>
                 <th>Model</th>
                 <th>Color</th>
                 <th>Plate Number</th>
@@ -47,7 +48,8 @@ $data=cars_list("trash");
             <tbody>
                 <?php while ($row = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td><?php echo $row['id']; ?></td>
+                    <td><img class="carsimg" src="../../../img/cars/<?php echo $row["image"]; ?>"></td>
+                        <td><?php echo $row['brandName']; ?></td>
                         <td><?php echo $row['modelName']; ?></td>
                         <td><?php echo $row['colorName']; ?></td>
                         <td><?php echo $row['plate_number']; ?></td>

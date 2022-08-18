@@ -40,11 +40,12 @@ $data=cars_list();
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Model ID</th>
-                <th>Color ID</th>
+                <th>#</th>
+                <th>Brand</th>
+                <th>Model</th>
+                <th>Color</th>
                 <th>Plate Number</th>
-                <th>Year ID</th>
+                <th>Year</th>
                 <th>Price Per Hour</th>
                 <th>Actions</th>
             </tr>
@@ -52,7 +53,8 @@ $data=cars_list();
             <tbody>
                 <?php while ($row = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td><?php echo $row['id']; ?></td>
+                        <td><img class="carsimg" src="../../../img/cars/<?php echo $row["image"]; ?>"></td>
+                        <td><?php echo $row['brandName']; ?></td>
                         <td><?php echo $row['modelName']; ?></td>
                         <td><?php echo $row['colorName']; ?></td>
                         <td><?php echo $row['plate_number']; ?></td>

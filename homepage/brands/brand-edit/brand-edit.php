@@ -35,7 +35,7 @@ $brand=brands_edit($_GET["id"]);
         </div>
         <div class="form-main">
             <form method="post" action="brand-edit.php">
-                <input type="text" placeholder="ID" name="brandID" value="<?php echo $brand['id']; ?>" required>
+                <input type="hidden" placeholder="ID" name="brandID" value="<?php echo $brand['id']; ?>" required>
                 <input type="text" placeholder="Enter Brand" name="nbrandName" value="<?php echo $brand['name']; ?>" required>
                 <button type="submit" name="save_bt">save</button>
                 <button><a herf="#">back</a></button>

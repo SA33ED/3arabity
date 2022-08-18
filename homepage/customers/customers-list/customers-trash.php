@@ -32,7 +32,6 @@ $data=customers_list("trash");
   <table class="table">
     <thead>
       <tr>
-        <th>ID</th>
         <th>Name</th>
         <th>Phone</th>
         <th>Address</th>
@@ -47,7 +46,6 @@ $data=customers_list("trash");
 
         <?php while ($customer = mysqli_fetch_assoc($data)) { ?>
           <tr>
-            <td><?php echo $customer["id"]; ?> </td>
             <td><?php echo $customer["name"]; ?> </td>
             <td><?php echo $customer["phone"]; ?></td>
             <td><?php echo $customer["address"]; ?></td>

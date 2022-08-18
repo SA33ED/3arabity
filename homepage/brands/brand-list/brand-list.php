@@ -40,7 +40,7 @@ $data=brands_list();
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
+                
                 <th>Name</th>
                 <th>Actions</th>
             </tr>
@@ -49,9 +49,6 @@ $data=brands_list();
                 <?php
                 while ($brands = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td>
-                            <?php echo $brands["id"]; ?>
-                        </td>
                         <td>
                             <?php echo $brands["name"]; ?>
                         </td>
