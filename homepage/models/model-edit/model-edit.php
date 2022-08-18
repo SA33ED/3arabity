@@ -35,7 +35,7 @@ $model=models_edit($_GET["id"]);
         </div>
         <div class="form-main">
             <form method="post" action="model-edit.php">
-                <input type="text" placeholder="ID" name="modelID" value="<?php echo $model['id']; ?>" required>
+                <input type="hidden" placeholder="ID" name="modelID" value="<?php echo $model['id']; ?>" required>
                 <input type="text" placeholder="Enter Model" name="modelName" value="<?php echo $model['name']; ?>" required>
                 <input type="text" placeholder="Enter Brand ID" name="brandID" value="<?php echo $model['brand_id']; ?>" required>
                 <button type="submit" name="save_bt">save</button>

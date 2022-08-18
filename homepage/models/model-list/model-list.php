@@ -40,7 +40,6 @@ $data=models_list("list");
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Brand ID</th>
                 <th>Active</th>
@@ -49,7 +48,6 @@ $data=models_list("list");
             <tbody>
                 <?php while ($model = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td><?php echo $model["id"]; ?></td>
                         <td><?php echo $model["name"]; ?></td>
                         <td><?php echo $model["brandName"]; ?></td>
                         <td>

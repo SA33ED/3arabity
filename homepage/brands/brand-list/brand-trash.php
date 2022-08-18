@@ -33,7 +33,6 @@ $data=brands_list("trash");
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Actions</th>
             </tr>
@@ -42,9 +41,6 @@ $data=brands_list("trash");
                 <?php
                 while ($brands = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td>
-                            <?php echo $brands["id"]; ?>
-                        </td>
                         <td>
                             <?php echo $brands["name"]; ?>
                         </td>

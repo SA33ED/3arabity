@@ -34,7 +34,7 @@ $year=years_edit($_GET["id"]);
         </div>
         <div class="form-main">
             <form method="post" action="year-edit.php">
-                <input type="text" placeholder="ID" name="yearID" value="<?php echo $year['id']; ?>" required>
+                <input type="hidden" placeholder="ID" name="yearID" value="<?php echo $year['id']; ?>" required>
                 <input type="text" placeholder="Enter year" name="yearName" value="<?php echo $year['name']; ?>" required>
                 <button type="submit" name="save_bt">save</button>
                 <button><a herf="#">back</a></button>

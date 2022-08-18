@@ -33,7 +33,6 @@ $data = cities_list("deleted");
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Actions</th>
             </tr>
@@ -41,7 +40,6 @@ $data = cities_list("deleted");
             <tbody>
                 <?php while ($city = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td><?php echo $city["id"]; ?></td>
                         <td><?php echo $city["name"]; ?></td>
                         <td>
                             <a href="cities-trash.php?id=<?php echo $city["id"];?>&action=restore"><button id="del">Restore</button></a>

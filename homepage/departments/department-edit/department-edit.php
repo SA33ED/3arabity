@@ -36,7 +36,7 @@ $department=departments_edit($_GET["id"]);
         </div>
         <div class="form-main">
             <form method="post" action="department-edit.php">
-                <input type="text" placeholder="ID" name="dID" value="<?php echo $department['id']; ?>" required> <!-- dID=>Department ID -->
+                <input type="hidden" placeholder="ID" name="dID" value="<?php echo $department['id']; ?>" required> <!-- dID=>Department ID -->
                 <input type="text" placeholder="Enter Department Name" name="dName" value="<?php echo $department['name']; ?>" required>
                 <button type="submit" name="save_bt">save</button>
                 <button><a herf="#">back</a></button>

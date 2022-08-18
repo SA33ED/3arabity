@@ -35,7 +35,7 @@ $city=cities_edit($_GET['id']);
     </div>
     <div class="form-main">
       <form method="post" action="editCityForm.php">
-        <input type="text" placeholder="ID" value="<?php echo $city["id"]; ?>" name="ID" required>
+        <input type="hidden" placeholder="ID" value="<?php echo $city["id"]; ?>" name="ID" required>
         <input type="text" placeholder="Enter New City Name" value="<?php echo $city["name"]; ?>" name="cityName" required>
         <button type="submit" name="save_bt">save</button>
         <button><a herf="#">back</a></button>

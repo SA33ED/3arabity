@@ -43,7 +43,6 @@ $data=departments_list("list");
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Actions</th>
             </tr>
@@ -51,7 +50,6 @@ $data=departments_list("list");
             <tbody>
                 <?php while ($row = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td><?php echo $row["id"]; ?></td>
                         <td><?php echo $row["name"]; ?></td>
                         <td>
                             <a href="../department-edit/department-edit.php?id=<?php echo $row["id"]; ?>">

@@ -39,7 +39,6 @@ $data=colors_list();
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Actions</th>
             </tr>
@@ -48,7 +47,6 @@ $data=colors_list();
                 <?php
                 while ($colors = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td><?php echo $colors['id']; ?></td>
                         <td><?php echo $colors['name']; ?></td>
                         <td>
                             <a href="../color-edit/color-edit.php?id=<?php echo $colors["id"]; ?>">

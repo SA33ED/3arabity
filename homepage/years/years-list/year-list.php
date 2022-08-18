@@ -40,7 +40,6 @@ $data=years_list("list");
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Actions</th>
             </tr>
@@ -49,7 +48,6 @@ $data=years_list("list");
                 <?php while ($row = mysqli_fetch_assoc($data)) { ?>
 
                     <tr>
-                        <td><?php echo $row['id'] ?></td>
                         <td><?php echo $row['name'] ?></td>
                         <td>
                             <a href="../year-edit/year-edit.php?id=<?php echo $row["id"]; ?>">

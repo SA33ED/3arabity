@@ -35,7 +35,7 @@ $color=colors_edit($_GET["id"]);
         </div>
         <div class="form-main">
             <form method="post" action="color-edit.php" ;>
-                <input type="text" placeholder="ID" name="colorID" value="<?php echo $color['id']; ?>" required>
+                <input type="hidden" placeholder="ID" name="colorID" value="<?php echo $color['id']; ?>" required>
                 <input type="text" placeholder="Enter Color" name="colorName" value="<?php echo $color['name']; ?>" required>
                 <button type="submit" name="save_bt">save</button>
                 <button><a herf="#">back</a></button>

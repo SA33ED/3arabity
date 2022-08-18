@@ -32,7 +32,6 @@ $data=models_list("trash");
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Brand</th>
                 <th>Active</th>
@@ -41,7 +40,6 @@ $data=models_list("trash");
             <tbody>
                 <?php while ($model = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td><?php echo $model["id"]; ?></td>
                         <td><?php echo $model["name"]; ?></td>
                         <td><?php echo $model["brandName"]; ?></td>
                         <td>

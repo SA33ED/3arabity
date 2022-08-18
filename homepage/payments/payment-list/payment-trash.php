@@ -37,7 +37,6 @@ $data=payments_list("trash");
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Actions</th>
             </tr>
@@ -45,7 +44,6 @@ $data=payments_list("trash");
             <tbody>
                 <?php while ($row = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td><?php echo $row["id"]; ?></td>
                         <td><?php echo $row["name"]; ?></td>
                         <td>
                             <a href="payment-trash.php?id=<?php echo $row["id"]; ?>">

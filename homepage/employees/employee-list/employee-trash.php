@@ -34,7 +34,6 @@ $data=employees_list("trash");
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Phone</th>
                 <th>Address</th>
@@ -48,7 +47,6 @@ $data=employees_list("trash");
                 <?php while ($employee = mysqli_fetch_assoc($data)) { ?>
 
                     <tr>
-                        <td><?php echo $employee["id"]; ?> </td>
                         <td><?php echo $employee["name"]; ?> </td>
                         <td><?php echo $employee["phone"]; ?></td>
                         <td><?php echo $employee["address"]; ?></td>

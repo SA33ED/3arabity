@@ -34,7 +34,7 @@ $employee=employees_edit($_GET["id"]);
         </div>
         <div class="form-main">
             <form method="post" action="employee-edit.php">
-                <input type="text" placeholder="Employee ID" name="eID" value="<?php echo $employee['id']; ?>" required>
+                <input type="hidden" placeholder="Employee ID" name="eID" value="<?php echo $employee['id']; ?>" required>
                 <input type="text" placeholder="New Name" name="eName" value="<?php echo $employee['name']; ?>" required>
                 <input type="text" placeholder="New Phone" name="ePhone" value="<?php echo $employee['phone']; ?>" required>
                 <input type="text" placeholder="New Address" name="eAddress" value="<?php echo $employee['address']; ?>" required>

@@ -36,7 +36,7 @@ $customer=customers_edit($_GET["id"]);
     </div>
     <div class="form-main">
       <form method="post" action="editCustomerForm.php">
-        <input type="text" placeholder="Customer ID" name="cID" value="<?php echo $customer['id'] ?>" required>
+        <input type="hidden" placeholder="Customer ID" name="cID" value="<?php echo $customer['id'] ?>" required>
         <input type="text" placeholder="New Name" name="cName" value="<?php echo $customer['name'] ?>" required>
         <input type="text" placeholder="New Phone" name="cPhone" value="<?php echo $customer['phone'] ?>" required>
         <input type="text" placeholder="New Address" name="cAddress" value="<?php echo $customer['address'] ?>" required>

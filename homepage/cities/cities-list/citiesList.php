@@ -41,7 +41,6 @@ $data = cities_list();
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Actions</th>
             </tr>
@@ -49,7 +48,6 @@ $data = cities_list();
             <tbody>
                 <?php while ($city = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td><?php echo $city["id"]; ?></td>
                         <td><?php echo $city["name"]; ?></td>
                         <td><a href="../city-edit/editCityForm?id=<?php echo $city["id"]; ?>"><button id="edit">Edit</button></a>
                             <a href="citiesList.php?id=<?php echo $city["id"];?>&action=delete"><button id="del">delete</button></a>

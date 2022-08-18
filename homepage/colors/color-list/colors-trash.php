@@ -33,7 +33,6 @@ $data=colors_list("trash");
     <table class="table">
         <thead>
             <tr>
-                <th>ID</th>
                 <th>Name</th>
                 <th>Actions</th>
             </tr>
@@ -42,7 +41,6 @@ $data=colors_list("trash");
                 <?php
                 while ($colors = mysqli_fetch_assoc($data)) { ?>
                     <tr>
-                        <td><?php echo $colors['id']; ?></td>
                         <td><?php echo $colors['name']; ?></td>
                         <td>
                             <a href="colors-trash.php?id=<?php echo $colors["id"]; ?>">
